@@ -4,56 +4,41 @@ const Cal = () => {
   return (
     <>
      
-     
-      <section className="bg-[#f5f5f4] mt-30  ">
-        <div className="border  max-w-7xl flex items-center justify-center mt-30 m-auto ">
-          <div className="">
-            <span className="">
-            Your Inbox, Calendar & Slack – finally working together
-            </span>
-            <span className="">
-              <p>Merlin syncs Gmail, Google Calendar, and Slack so you can book trips, clear tasks, and silence chaos from one chat.</p>
-            </span>
-          </div>
-        </div>
+  <section className="bg-[#f5f5f4] py-20 mt-30 leading-[47px] font-inter font-medium ">
+  <div className="max-w-7xl mx-auto text-left  px-6">
+    <h1 className="text-3xl font-medium mb-4">
+      Your Inbox, Calendar & Slack – finally working together
+    </h1>
+    <p className="text-lg text-gray-600">
+      Merlin syncs Gmail, Google Calendar, and Slack so you can book trips, clear tasks, and silence chaos from one chat.
+    </p>
+  </div>
 
-     
-     <section className="relative flex flex-col md:flex-row justify-between items-start mt-90 gap-6 max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-12 rounded-3xl sm:rounded-4xl mb-8 sm:mb-12 border  ">
-      <div className="flex flex-col items-start gap-4 sm:gap-6 w-full">
-        <div>
-          <h3 className="text-white text-2xl sm:text-3xl md:text-4xl font-bold leading-snug mb-2 sm:mb-4 max-w-full md:max-w-[480px]">
-            
-          </h3>
-          <p className="text-white text-base sm:text-lg leading-relaxed">
-          
-          </p>
-        </div>
-      </div>
-      
-    </section>
+  <div className="max-w-7xl flex flex-col items-center justify-center mt-20 mx-auto rounded-4xl  h-96 bg-gradient-to-b from-[#96dfff] to-[#dddd]">
+    
+  </div>
 
-    <section className="flex items-center justify-center px-2 sm:px-0 ">
-      <div className="max-w-6xl w-full mx-auto rounded-2xl grid grid-cols-1 md:grid-cols-2 gap-4  ">
-        
-        <div className="border  rounded-3xl sm:rounded-4xl flex flex-col items-center">
-         
-          <div className="items-end p-4 sm:p-6">
-            
-            
-          </div>
-        </div>
-        <div className="border  rounded-3xl sm:rounded-4xl flex flex-col items-center">
-          
-          <div className="items-end p-4 sm:p-6">
-            <h1 className="text-white text-2xl sm:text-3xl md:text-[2.75rem]  font-bold"></h1>
-            <p className="text-white text-base sm:text-lg mt-3">
-            
-            </p>
-          </div>
-        </div>
+  {/* Bottom two side-by-side cards */}
+  <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 px- mt-20">
+    {/* Card 1 */}
+    <div className="rounded-4xl bg-white p-10 text-left h-[600px]">
+      <h3 className="text-2xl font-semibold mb-4">Clarity over clutter</h3>
+        <p className="text-gray-600">
+          No more switching between tools. Manage your emails, calendar,
+          and Slack in one place.
+        </p>
+     </div>
+
+    {/* Card 2 */}
+      <div className="rounded-4xl bg-white p-10 text-left h-[600px]">
+        <h3 className="text-2xl font-semibold mb-4">Talk. Type. Done.</h3>
+        <p className="text-gray-600">
+        Ask in plain language. Whether it’s booking a meeting or
+        clearing your inbox, Merlin gets it done instantly.
+        </p>
       </div>
-    </section>
-    </section>
+    </div>
+</section>
     </>
   );
 };
