@@ -1,9 +1,11 @@
-import React from 'react';
-// import './TypingBlur.css';
+import React, {  } from "react";
+// import gsap from "gsap";
+
+
 
 const Hero = () => {
 
-
+  
     
   return (
     <div className="relative min-h-screen overflow-hidden">
@@ -57,7 +59,7 @@ const Hero = () => {
           </div>
           
           {/* Start free trial button */}
-          <button className="bg-black  text-white px-5 py-3 mt-9 mr-10 rounded-full text-base font-medium hover:bg-gray-800 transition-colors duration-200 flex items-center">
+          <button  className="bg-black  text-white px-5 py-3 mt-9 mr-10 rounded-full text-base font-medium hover:bg-gray-800 transition-colors duration-200 flex items-center">
             Start free trial
             <svg 
               className="ml-2 w-4 h-4" 

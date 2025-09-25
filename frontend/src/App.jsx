@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Hero from './pages/Hero';
 import Card from './pages/Card';
 import Cal from './pages/Cal';
@@ -9,11 +10,30 @@ import Footer from './pages/footer';
 import Merlin from './pages/Merlin';
 import Navbar from './components/Navbar';
 import Text from './pages/Text';
+import Cursor from "./components/Cursor";
 
 function App() {
+  useEffect(() => {
+    const handleSpacebar = (event) => {
+      if (event.code === "Space") {
+        event.preventDefault();
+
+        // Open in new tab without replacing current page
+        window.open("https://www.unsquare.in", "_blank");
+      }
+    };
+
+    window.addEventListener("keydown", handleSpacebar);
+
+    return () => {
+      window.removeEventListener("keydown", handleSpacebar);
+    };
+  }, []);
+
   return (
     <>
-    <Navbar/>
+      <Cursor/>
+      <Navbar/>
       <Hero />
       <Card />
       <Text/>

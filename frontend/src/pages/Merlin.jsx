@@ -1,10 +1,35 @@
-import React from 'react'
+import React, { useRef, useEffect } from 'react';
+import gsap from 'gsap';
 
 const merlin = () => {
+  const imageRef = useRef(null);
+
+   useEffect(() => {
+    const handleMouseMove = (event) => {
+      // Get mouse coordinates
+      const x = event.clientX;
+      const y = event.clientY;
+
+      // Animate the image to follow the cursor
+      gsap.to(imageRef.current, {
+        x: x - imageRef.current.offsetWidth / 2, // Center image on cursor
+        y: y - imageRef.current.offsetHeight / 2,
+        duration: 0.3,
+        ease: "power2.out"
+      });
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
+
   return (
     <section className='bg-[#f5f5f5] pb-10'>
         <div className='max-w-6xl m-auto pt-4 '>
-            <img src="https://www.merlin.computer/logo.svg" alt="logo" 
+            <img  src="https://www.merlin.computer/logo.svg" alt="logo" 
             className='w-full'/>
         </div>
     </section>
