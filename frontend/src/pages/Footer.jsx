@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="flex flex-col items-start  md:items-start space-y-4">
           <p className="text-gray-600 flex items-center  lg:text-[16px]">
             Press 
-            <span className="mx-2 px-3 py-1 rounded-full shadow bg-white border text-gray-600 font-medium flex items-center">
+            <span className="mx-2 px-3 py-2 rounded-full shadow  bg-white  text-gray-600 font-medium flex items-center">
               Space &nbsp; <svg width="16" height="6" viewBox="0 0 16 6" fill="none" xmlns="http://www.w3.org/2000/svg" role='img' aria-label="Space bar icon "><path d="M14 0V4H2V0H0V6H16V0H14Z" fill="#808080"></path></svg>
             </span>
             to start your free trial

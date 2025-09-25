@@ -27,15 +27,15 @@ const Hero = () => {
         </div>
         
         {/* Main heading */}
-        <div className="text-center mb-6 md:mb-8  border border-amber-500">
+        <div className="text-center mb-6 md:mb-8  ">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-inter  text-black tracking-tight">
             <div className="flex items-center justify-center flex-wrap">
-              <span className="mr-3">The world's</span>
+              <span className="mr-3 ">The world's</span>
               <div className="h-[50px] w-[50px]">
                     <img src="https://www.merlin.computer/merlin-logo.svg" alt="logo" className='h-15 w-15'/>   	   
               </div>&nbsp;
             </div>
-              <span>first AI chief of staff</span>
+              <span className=''>first AI chief of staff</span>
               
           </h1>
         </div>

@@ -7,12 +7,16 @@ import Ready from './pages/Ready';
 import Test from './pages/Test';
 import Footer from './pages/footer'; 
 import Merlin from './pages/Merlin';
+import Navbar from './components/Navbar';
+import Text from './pages/Text';
 
 function App() {
   return (
     <>
+    <Navbar/>
       <Hero />
       <Card />
+      <Text/>
       <Cal />
       <Pricing />
       <Data />
