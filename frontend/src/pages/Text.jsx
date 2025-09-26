@@ -84,8 +84,8 @@ const Text = () => {
   return (
     <section className="bg-[#ffff] max-w-[800px] m-auto mt-70 mb-70">
       {/* Quote */}
-      <div className="flex justify-center items-center text-[40px] leading-[45px] font-medium">
-        <div ref={quoteRef} className="text-black text-center">
+      <div ref={quoteRef} className="flex justify-center items-center text-[40px] leading-[45px] font-medium">
+        <div  className="text-black text-center">
           <h1>{splitQuote}</h1>
         </div>
       </div>

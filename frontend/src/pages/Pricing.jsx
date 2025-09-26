@@ -4,10 +4,10 @@ import { Check ,ChevronRight,X} from 'lucide-react'
 const pricing = () => {
   return (
     <>
-    <section className="mt-30 py-20">
+    <section className="mt-8 py-20">
       {/* Section header */}
       <div className="text-center">
-        <h1 className="text-[40px] font-semibold">Pricing</h1>
+        <h1 className="text-[40px] font-medium">Pricing</h1>
         <p className="text-[16px] text-gray-400 font-medium mt-2">
           Hire your full-time, dedicated AI chief of staff for only $19 per
           month
@@ -77,7 +77,7 @@ const pricing = () => {
     <div className='max-w-xl mx-auto px-4'>
         <div className='flex justify-center items-center'>
             <button className='bg-gray-300 flex items-center justify-center gap-2  md:w-auto px-6 py-4 rounded-full font-semibold 
-                transition-all duration-200 shadow-md hover:bg-gray-400 text-gray-700'
+                transition-all duration-200 shadow-md  text-gray-700'
             >
                 Make the switch to Merlin
                 <ChevronRight className="w-5 h-5" />

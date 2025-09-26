@@ -1,13 +1,18 @@
 import React, {  useEffect , useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { TextPlugin } from "gsap/TextPlugin";
 
 gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(TextPlugin)
 
 
 
 const Cal = () => {
   const cards = useRef(null); 
+  const textRef = useRef(null);
+  const cursorRef = useRef(null);
+  const tl = useRef(null);
 
   useEffect(() => {
     gsap.fromTo(
@@ -29,6 +34,53 @@ const Cal = () => {
       }
     );
   }, [])
+
+  const sentences = [
+    "Resurface sequoia  meetings notes",
+    "Block focus time this afternoon",
+    "Summarize last investor call",
+    "Draft reply to Sarah's email",
+    "Schedule a  call with  Daniel",
+];
+
+useEffect(() => {
+    const textEl = textRef.current;
+    const cursorEl = cursorRef.current;
+
+    tl.current = gsap.timeline({ repeat: -1 });
+
+    sentences.forEach((sentence) => {
+      // typing animation
+      tl.current.to(textEl, {
+        text: sentence,
+        duration: sentence.length * 0.08, // typing speed
+        filter: "blur(0px)",
+        ease: "none",
+      });
+
+      // small pause
+      tl.current.to({}, { duration: 1 });
+
+      // deleting animation
+      tl.current.to(textEl, {
+        text: "",
+        duration: sentence.length * 0.05, // deleting speed
+        filter: "blur(1px)",
+        ease: "none",
+      });
+    });
+
+    // // cursor blink
+    // gsap.to(cursorEl, {
+    //   opacity: 0,
+    //   repeat: -1,
+    //   yoyo: true,
+    //   duration: 0.6,
+    //   ease: "power1.inOut",
+    // });
+  }, []);
+
+
 
   return (
     <>
@@ -110,7 +162,7 @@ const Cal = () => {
                 <img
                   src="https://www.merlin.computer/apps.webp"
                   alt="Apps Overlay"
-                  className="absolute inset-0 w-full p-4 md:p-8 object-contain"
+                  className="absolute inset-0 w-full h-[20rem] p-4 md:p-8 object-contain"
                 />
 
                 <div className="relative z-10 pb-2 md:pb-3">
@@ -132,10 +184,11 @@ const Cal = () => {
                 />
 
                 <div className="absolute top-8 md:top-12 left-4 md:left-20 z-10">
-                  <button className="h-16 md:h-24 lg:w-auto px-4 md:px-6 rounded-2xl md:rounded-3xl text-white text-base md:text-lg font-medium
+                  <button className="h-16 w-[20rem] md:h-24 lg:w-[30rem] px-4 md:px-6 rounded-2xl md:rounded-3xl text-white text-base md:text-lg font-medium
                     bg-gradient-to-b from-gray-500 to-gray-900
-                    shadow-[4px_4px_8px_rgba(0,0,0,0.3),-2px_-2px_6px_rgba(255,255,255,0.6)]">
-                    Resurface Sequoia meeting notes
+                    shadow-[16px_16px_32px_rgba(0,0,0,0.10),-2px_-2px_6px_rgba(255,255,255,0.6)] ">
+                    <span ref={textRef} className="inline-block"></span>
+                    {/* <span ref={cursorRef}>|</span> */}
                   </button>
                 </div>
 

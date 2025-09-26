@@ -1,83 +1,183 @@
-import React, {  } from "react";
-// import gsap from "gsap";
+import React, { useState, useEffect, useRef } from 'react';
+import gsap from 'gsap';
 
 
 
 const Hero = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [displayText, setDisplayText] = useState('');
+  const [isTyping, setIsTyping] = useState(true);
 
-  
-    
+  const textData = [
+    { color: "red", text: "Average user saves 12+ hours/week" },
+    { color: "green", text: "7000+ threads untangled on slack" },
+    { color: "orange", text: "100,000 emails prioritized so far" },
+    { color: "blue", text: "calendar conflicts automatically resolved" },
+  ];
+
+  useEffect(() => {
+    const currentText = textData[currentIndex].text;
+    let timeout;
+
+    if (isTyping) {
+      if (displayText.length < currentText.length) {
+        timeout = setTimeout(() => {
+          setDisplayText(currentText.slice(0, displayText.length + 1));
+        }, 50);
+      } else {
+        timeout = setTimeout(() => {
+          setIsTyping(false);
+        }, 2000);
+      }
+    } else {
+      if (displayText.length > 0) {
+        timeout = setTimeout(() => {
+          setDisplayText(displayText.slice(0, -1));
+        }, 30);
+      } else {
+        setCurrentIndex((prev) => (prev + 1) % textData.length);
+        setIsTyping(true);
+      }
+    }
+
+    return () => clearTimeout(timeout);
+  }, [displayText, isTyping, currentIndex, textData]);
+
+
+   const introRef = useRef(null);
+
+  useEffect(() => {
+    // Target all children elements inside introRef
+    gsap.fromTo(introRef.current.children, 
+      {
+        opacity: 0,
+        y: -80,
+      },
+      {
+        opacity: 1, 
+        y: 0,
+        duration: 1,
+        ease: "power3.out",
+        stagger: 0.2,
+        clearProps: "all" // Important: Clear properties after animation
+      }
+    );
+  }, []);
+
+
   return (
     <div className="relative min-h-screen overflow-hidden">
       {/* Background gradient image */}
-      <div className="absolute inset-0  w-full h-full">
+      <div className="absolute inset-0 w-full h-full">
         <img 
           src="/gradient.png" 
           alt="Background Gradient" 
-          className="w-full  object-cover -mt-20"
+          className="w-full object-cover -mt-20"
         />
       </div>
-      
+
       {/* Content container */}
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-7 py-36">
-        {/* Stats indicator */}
-        <div className="mb-8 md:mb-12">
-          <div className="flex items-center text-gray-500 text-sm">
-            <div className="w-2 h-2 bg-red-500 rounded-full mr-2"></div>
-            Average user saves 12+ hours/week
-          </div>
+        <div className="flex items-center mb-4 text-sm text-gray-500 h-12">
+          <div
+            className="w-2 h-2 rounded-full mr-2"
+            style={{ backgroundColor: textData[currentIndex].color }}
+          ></div>
+          <span>{displayText}</span>
         </div>
-        
+
         {/* Main heading */}
-        <div className="text-center mb-6 md:mb-8  ">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-inter  text-black tracking-tight">
-            <div className="flex items-center justify-center flex-wrap">
-              <span className="mr-3 ">The world's</span>
-              <div className="h-[50px] w-[50px]">
-                    <img src="https://www.merlin.computer/merlin-logo.svg" alt="logo" className='h-15 w-15'/>   	   
-              </div>&nbsp;
-            </div>
-              <span className=''>first AI chief of staff</span>
-              
-          </h1>
+       <div className="text-center mb-6 md:mb-8">
+      <h1 className="text-5xl md:text-6xl lg:text-7xl font-inter tracking-tight">
+        {/* "The world's first" drops from top */}
+        <div
+          ref={introRef}
+          className="flex items-center justify-center flex-wrap mb-2"
+        >
+          <span className="mr-3">The world's</span>
+          <div className="h-[50px] w-[50px]">
+            <img
+              src="https://www.merlin.computer/merlin-logo.svg"
+              alt="logo"
+              className="h-15 w-15"
+            />
+          </div>
+          <span>first</span>
         </div>
-        
+
+        {/* Gradient wipe left → right */}
+        <div>
+          <span
+            className="ml-2 relative inline-block text-black animate-[reveal_2s_forwards]"
+            style={{
+              backgroundImage:
+                "linear-gradient(90deg,#000000 0%,#000000 33.33%,#c679c4 40%,#fa3d1d 45%,#ffb005 50%,#e1e1fe 55%,#0358f7 60%,transparent 66.67%)",
+              backgroundSize: "300% 100%",
+              backgroundPosition: "100% 0",
+              WebkitBackgroundClip: "text",
+              backgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              color: "transparent",
+            }}
+          >
+            AI chief of staff
+          </span>
+        </div>
+      </h1>
+    </div>
+
+
+
         {/* Description text */}
         <div className="text-center mb-10 md:mb-12 lg:max-w-2/4 mx-auto">
-          <p className="text-gray-600 text-[10px] md:text-base  px-4">
-            Merlin finds your highest-impact priorities from your inbox  <br /> and calendar, then helps you complete them with a single click.
+          <p className="text-gray-600 text-[10px] md:text-base px-4">
+            Merlin finds your highest-impact priorities from your inbox <br /> and calendar, then helps you complete them with a single click.
           </p>
         </div>
-        
+
         {/* CTA Section */}
         <div className="flex flex-col items-center">
-          {/* Placeholder for "Try merlin free for 7 days" image */}
           <div className="mb-4">
             <div className="w-64 h-12 absolute left-[60px] lg:left-[40%] lg:top-[51%]">
-                <img src="https://www.merlin.computer/try%20merlin.svg" alt="" />
+              <img src="https://www.merlin.computer/try%20merlin.svg" alt="Try Merlin Free for 7 Days" />
             </div>
           </div>
-          
-          {/* Start free trial button */}
-          <button  className="bg-black  text-white px-5 py-3 mt-9 mr-10 rounded-full text-base font-medium hover:bg-gray-800 transition-colors duration-200 flex items-center">
-            Start free trial
-            <svg 
-              className="ml-2 w-4 h-4" 
-              fill="none" 
-              stroke="currentColor" 
-              viewBox="0 0 24 24"
-            >
-              <path 
-                strokeLinecap="round" 
-                strokeLinejoin="round" 
-                strokeWidth={2} 
-                d="M9 5l7 7-7 7"
-              />
-            </svg>
+
+          <button className="cursor-pointer mt-5 bg-black px-6 py-3 rounded-full text-white font-medium group">
+            <div className="relative overflow-hidden">
+              <div className="group-hover:-translate-y-7 duration-[1.125s] ease-[cubic-bezier(0.19,1,0.22,1)] flex justify-center items-center">
+                <span>Start free trial</span>
+                <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" >
+                  <path 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round" 
+                    strokeWidth={2} 
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </div>
+
+              <div className="absolute top-7 left-0 group-hover:top-0 duration-[1.125s] ease-[cubic-bezier(0.19,1,0.22,1)] w-full flex justify-center items-center">
+                <span>Start free trial</span>
+                <svg 
+                  className="ml-2 w-4 h-4" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round" 
+                    strokeWidth={2} 
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </div>
+            </div>
           </button>
         </div>
-        
-        {/* Company logos section */}
+
+       {/* Company logos section */}
         <div className="mt-16 md:mt-28 text-center">
           <p className="text-black text-[10px] mb-2">Used by professionals at</p>
           <div className="flex items-center justify-center  flex-wrap gap-8 md:gap-7 opacity-60">

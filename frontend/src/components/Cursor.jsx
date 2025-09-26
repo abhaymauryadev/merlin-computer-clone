@@ -16,7 +16,7 @@ const Cursor = () => {
         x: e.clientX - width / 2,
         y: e.clientY - height / 2,
         duration: 0.5, // A slightly smoother duration
-        ease: "power1.Out",
+        ease: "elastic.out(1, 0.4)",
       });
     };
 
@@ -24,7 +24,7 @@ const Cursor = () => {
       gsap.to(cursor, {
         scale: 3.5, // Scale up for a more noticeable effect
         duration: 0.3,
-        ease: "power1.Out",
+        ease: "elastic.out(1, 0.4)",
       });
     };
 
@@ -32,7 +32,7 @@ const Cursor = () => {
       gsap.to(cursor, {
         scale: 1, // Scale back to normal
         duration: 0.3,
-        ease: "power1.Out",
+        ease: "elastic.out(1, 0.4)",
       });
     };
 

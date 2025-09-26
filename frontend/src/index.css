@@ -8,3 +8,29 @@ body {
 .body{
   behavior: smooth;
 }
+
+
+
+@theme {
+  @keyframes reveal {
+    0% {
+      background-position: 100% 0;
+    }
+    99% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 0 0;
+      -webkit-text-fill-color: #000;
+      color: #000;
+    }
+  }
+
+  --animate-reveal: reveal 2s ease forwards;
+}
+
+@layer utilities {
+  .animate-reveal {
+    animation: var(--animate-reveal);
+  }
+}
