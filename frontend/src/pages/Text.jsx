@@ -59,7 +59,7 @@ const Text = () => {
           start: "top 85%",
           end: "top 50%",
           scrub: true,
-          markers: true,
+          markers: false,
           toggleActions: "play none none reverse",
         },
       }
