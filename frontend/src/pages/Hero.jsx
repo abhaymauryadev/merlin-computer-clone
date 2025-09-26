@@ -52,10 +52,12 @@ const Hero = () => {
       {
         opacity: 0,
         y: -80,
+        filter:"blur(10px)",
       },
       {
         opacity: 1, 
         y: 0,
+        filter: "blur(0px)",
         duration: 1,
         ease: "power3.out",
         stagger: 0.2,
