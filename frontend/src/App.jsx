@@ -6,7 +6,7 @@ import Pricing from './pages/Pricing';
 import Data from './pages/Data';
 import Ready from './pages/Ready';
 import Test from './pages/Test';
-import Footer from './pages/footer'; 
+import Footer from './pages/Footer'; 
 import Merlin from './pages/Merlin';
 import Navbar from './components/Navbar';
 import Text from './pages/Text';
