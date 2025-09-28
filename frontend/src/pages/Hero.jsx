@@ -89,19 +89,19 @@ const Hero = () => {
         </div>
 
         {/* Main heading */}
-       <div className="text-center mb-6 md:mb-8">
-      <h1 className="text-5xl md:text-6xl lg:text-7xl font-inter tracking-tight">
+       <div className="text-center mb-6 md:mb-8 px-4">
+      <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-inter tracking-tight">
         {/* "The world's first" drops from top */}
         <div
           ref={introRef}
-          className="flex items-center justify-center flex-wrap mb-2"
+          className="flex items-center justify-center flex-wrap mb-2 gap-2 sm:gap-3"
         >
-          <span className="mr-3">The world's</span>
-          <div className="h-[50px] w-[50px]">
+          <span className="mr-1 sm:mr-2 md:mr-3">The world's</span>
+          <div className="h-[30px] w-[30px] sm:h-[40px] sm:w-[40px] md:h-[50px] md:w-[50px]">
             <img
               src="https://www.merlin.computer/merlin-logo.svg"
               alt="logo"
-              className="h-15 w-15"
+              className="h-full w-full"
             />
           </div>
           <span>first</span>
@@ -110,7 +110,7 @@ const Hero = () => {
         {/* Gradient wipe left → right */}
         <div>
           <span
-            className="ml-2 relative inline-block text-black animate-[reveal_2s_forwards]"
+            className="ml-1 sm:ml-2 relative inline-block text-black animate-[reveal_2s_forwards]"
             style={{
               backgroundImage:
                 "linear-gradient(90deg,#000000 0%,#000000 33.33%,#c679c4 40%,#fa3d1d 45%,#ffb005 50%,#e1e1fe 55%,#0358f7 60%,transparent 66.67%)",
@@ -132,20 +132,20 @@ const Hero = () => {
 
         {/* Description text */}
         <div className="text-center mb-10 md:mb-12 lg:max-w-2/4 mx-auto">
-          <p className="text-gray-600 text-[10px] md:text-base px-4">
-            Merlin finds your highest-impact priorities from your inbox <br /> and calendar, then helps you complete them with a single click.
+          <p className="text-gray-600 text-sm sm:text-base md:text-lg px-4 leading-relaxed">
+            Merlin finds your highest-impact priorities from your inbox <br className="hidden sm:block" /> and calendar, then helps you complete them with a single click.
           </p>
         </div>
 
         {/* CTA Section */}
-        <div className="flex flex-col items-center">
-          <div className="mb-4">
-            <div className="w-64 h-12 absolute left-[60px] lg:left-[40%] lg:top-[51%]">
-              <img src="https://www.merlin.computer/try%20merlin.svg" alt="Try Merlin Free for 7 Days" />
+        <div className="flex flex-col items-center px-4">
+          <div className="mb-4 relative">
+            <div className="w-48 sm:w-56 md:w-64 h-10 sm:h-12 mx-auto">
+              <img src="https://www.merlin.computer/try%20merlin.svg" alt="Try Merlin Free for 7 Days" className="w-full h-full object-contain" />
             </div>
           </div>
 
-          <button className="cursor-pointer mt-5 bg-black px-6 py-3 rounded-full text-white font-medium group">
+          <button className="cursor-pointer mt-5 bg-black px-6 py-3 rounded-full text-white font-medium group w-full max-w-xs sm:max-w-sm">
             <div className="relative overflow-hidden">
               <div className="group-hover:-translate-y-7 duration-[1.125s] ease-[cubic-bezier(0.19,1,0.22,1)] flex justify-center items-center">
                 <span>Start free trial</span>
@@ -180,14 +180,14 @@ const Hero = () => {
         </div>
 
        {/* Company logos section */}
-        <div className="mt-16 md:mt-28 text-center">
-          <p className="text-black text-[10px] mb-2">Used by professionals at</p>
-          <div className="flex items-center justify-center  flex-wrap gap-8 md:gap-7 opacity-60">
+        <div className="mt-16 md:mt-28 text-center px-4">
+          <p className="text-black text-xs sm:text-sm mb-4">Used by professionals at</p>
+          <div className="flex items-center justify-center flex-wrap gap-4 sm:gap-6 md:gap-8 opacity-60">
             {/* Notion logo placeholder */}
             <div className="flex items-center">
               {/* <div className="w-6 h-6 bg-black rounded mr-2"></div> */}
               <span className="font-medium text-lg">
-                <img src="https://www.merlin.computer/notion.svg" alt="" className='w-20 h-20' />
+                <img src="https://www.merlin.computer/notion.svg" alt="" className='w-16 h-16 sm:w-20 sm:h-20' />
               </span>
             </div>
             
@@ -205,7 +205,7 @@ const Hero = () => {
               </div> */}
                 {/* <span className="text-white font-bold text-xs">H</span> */}
               <span className="text-red-800 font-serif text-lg">
-                <img src="https://www.merlin.computer/harvard.svg" alt=""  className='w-20 h-20'/>
+                <img src="https://www.merlin.computer/harvard.svg" alt=""  className='w-16 h-16 sm:w-20 sm:h-20'/>
               </span>
             </div>
             

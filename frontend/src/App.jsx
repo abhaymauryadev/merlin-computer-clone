@@ -11,6 +11,7 @@ import Merlin from './pages/Merlin';
 import Navbar from './components/Navbar';
 import Text from './pages/Text';
 import Cursor from "./components/Cursor";
+import ZoomInText from "./pages/ZoomInText";
 
 function App() {
   useEffect(() => {
@@ -39,6 +40,7 @@ function App() {
       <Text/>
       <Cal />
       <Pricing />
+      <ZoomInText/>
       <Data />
       <Ready />
       <Test />

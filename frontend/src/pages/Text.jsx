@@ -74,7 +74,7 @@ const Text = () => {
 
   // Split quote into spans
   const quote =
-    "Merlin became the operating system for my day—cleared my plate and gave me back 12 hours a week.";
+    "Merlin became the operating system for my day—cleared my plate and gave me  back 12 hours a week.";
   const splitQuote = quote.split("").map((char, i) => (
     <span key={i} className="letter inline-block">
       {char === " " ? "\u00A0" : char}

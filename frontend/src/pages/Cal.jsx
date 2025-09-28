@@ -15,7 +15,7 @@ const Cal = () => {
   const tl = useRef(null);
 
   useEffect(() => {
-    gsap.fromTo(
+    const animation = gsap.fromTo(
       cards.current,
       {
         opacity: 0,
@@ -33,6 +33,10 @@ const Cal = () => {
         }
       }
     );
+    
+    return () => {
+      animation.kill()
+    }
   }, [])
 
   const sentences = [
@@ -70,14 +74,11 @@ useEffect(() => {
       });
     });
 
-    // // cursor blink
-    // gsap.to(cursorEl, {
-    //   opacity: 0,
-    //   repeat: -1,
-    //   yoyo: true,
-    //   duration: 0.6,
-    //   ease: "power1.inOut",
-    // });
+    return () => {
+      if (tl.current) {
+        tl.current.kill()
+      }
+    }
   }, []);
 
 
@@ -115,7 +116,7 @@ useEffect(() => {
               {/* Merlin response */}
               <div ref={cards} className="flex justify-start mt-4"> {/* Changed from -mt-20 */}
                 <div className="flex items-start max-w-[90%] md:max-w-[510px] space-y-4"> {/* Added consistent spacing */}
-                  <img src="https://www.merlin.computer/merlin-logo.svg" alt=""
+                  <img src="https://www.merlin.computer/merlin-logo.svg" alt="Merlin logo"
                     className="w-6 md:w-8 h-6 md:h-8 rounded-full mr-3" /> {/* Adjusted margin */}
 
                   <div className="bg-[#fdf8f7] rounded-2xl px-4 py-4 w-full"> {/* Standardized padding */}
@@ -141,7 +142,7 @@ useEffect(() => {
 
                     <div className="mt-6"> {/* Increased spacing */}
                       <p>If this sounds good, hit the button below and I'll get things booked.</p>
-                      <img src="https://www.merlin.computer/lock.svg" alt="lock" className="w-full mt-4" />
+                      <img src="https://www.merlin.computer/lock.svg" alt="Security lock icon" className="w-full mt-4" />
                     </div>
                   </div>
                 </div>
@@ -185,10 +186,11 @@ useEffect(() => {
 
                 <div className="absolute top-8 md:top-12 left-4 md:left-20 z-10">
                   <button className="h-16 w-[20rem] md:h-24 lg:w-[30rem] px-4 md:px-6 rounded-2xl md:rounded-3xl text-white text-base md:text-lg font-medium
-                    bg-gradient-to-b from-gray-500 to-gray-900
+                    bg-gradient-to-b from-gray-500  to-gray-900
                     shadow-[16px_16px_32px_rgba(0,0,0,0.10),-2px_-2px_6px_rgba(255,255,255,0.6)] ">
+                       <span className="absolute inset-0 rounded-2xl bg-gradient-to-b from-white/20 to-transparent opacity-85 pointer-events-none flex  justify-center items-center "></span>
                     <span ref={textRef} className="inline-block"></span>
-                    {/* <span ref={cursorRef}>|</span> */}
+                   
                   </button>
                 </div>
 
