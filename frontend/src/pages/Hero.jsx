@@ -132,7 +132,7 @@ const Hero = () => {
 
         {/* Description text */}
         <div className="text-center mb-10 md:mb-12 lg:max-w-2/4 mx-auto">
-          <p className="text-gray-600 text-sm sm:text-base md:text-lg px-4 leading-relaxed">
+          <p className="text-gray-600 text-[6px] sm:text-[12px] md:text-[17px] px-4 leading-relaxed">
             Merlin finds your highest-impact priorities from your inbox <br className="hidden sm:block" /> and calendar, then helps you complete them with a single click.
           </p>
         </div>
