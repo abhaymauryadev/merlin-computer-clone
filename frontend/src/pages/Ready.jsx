@@ -33,9 +33,18 @@ const Ready = () => {
               </div>
           </div>
 
-          <div className='mt-30 max-w-5xl m-auto text-center '>
-            <button className='border py-4  px-8 rounded-2xl text-white bg-[#34C759] mb-[50px]'>Start free trial</button>
-          </div>
+          <div className="mt-30 max-w-5xl m-auto text-center">
+  <button className="relative py-4 px-12 rounded-2xl text-white bg-[#34C759] mb-[50px] overflow-hidden">
+    <span className="relative z-10">Start free trial</span>
+
+    {/* Rotating glow border inside */}
+    <span className="absolute inset-0 rounded-2xl overflow-hidden w-full">
+      <span className="absolute inset-[-20%] rounded-[50%] bg-[conic-gradient(from_0deg,white_10%,transparent_30%,transparent_100%)]  animate-spin-slow opacity-70 blur-sm"></span>
+    </span>
+  </button>
+</div>
+
+
     </section>
   )
 }

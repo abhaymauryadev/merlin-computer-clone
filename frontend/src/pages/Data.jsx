@@ -2,8 +2,8 @@ import React from 'react'
 
 const Data = () => {
   return (
-    <section className='mt-20 sm:mt-40 md:mt-60 max-w-[1200px] m-auto bg-[#fcfcfc] border-gray-200 rounded-2xl shadow-md mx-4 sm:mx-6 md:mx-auto'>
-    <div className='flex flex-col lg:flex-row lg:gap-12 lg:ml-3'>
+  <section className='  mt-20 sm:mt-20 md:mt-20 max-w-[1200px]  bg-[#fcfcfc] border-gray-200 rounded-2xl shadow-md mx-4 sm:mx-6 md:m-auto'>
+    <div className='flex flex-col lg:flex-row lg:gap-44 lg:ml-3'>
         <div className='rounded-xl p-6 sm:p-8'>
             <div>
                 <h1 className='text-2xl sm:text-3xl font-light'>Your Data. Your Control.</h1>
@@ -32,7 +32,7 @@ const Data = () => {
     </div> 
 
     
-    </section>
+  </section>
   )
 }
 

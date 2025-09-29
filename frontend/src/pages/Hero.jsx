@@ -140,12 +140,12 @@ const Hero = () => {
         {/* CTA Section */}
         <div className="flex flex-col items-center px-4">
           <div className="mb-4 relative">
-            <div className="w-48 sm:w-56 md:w-64 h-10 sm:h-12 mx-auto">
+            <div className="w-48 sm:w-56 md:w-64 h-10 sm:h-24 -ml-14 mx-auto">
               <img src="https://www.merlin.computer/try%20merlin.svg" alt="Try Merlin Free for 7 Days" className="w-full h-full object-contain" />
             </div>
           </div>
 
-          <button className="cursor-pointer mt-5 bg-black px-6 py-3 rounded-full text-white font-medium group w-full max-w-xs sm:max-w-sm">
+          <button className="cursor-pointer -mt-16 bg-black px-6 py-3 rounded-full text-white font-medium group w-full max-w-xs sm:max-w-sm">
             <div className="relative overflow-hidden">
               <div className="group-hover:-translate-y-7 duration-[1.125s] ease-[cubic-bezier(0.19,1,0.22,1)] flex justify-center items-center">
                 <span>Start free trial</span>
@@ -180,7 +180,7 @@ const Hero = () => {
         </div>
 
        {/* Company logos section */}
-        <div className="mt-16 md:mt-28 text-center px-4">
+        <div className="mt-16  text-center px-4">
           <p className="text-black text-xs sm:text-sm mb-4">Used by professionals at</p>
           <div className="flex items-center justify-center flex-wrap gap-4 sm:gap-6 md:gap-8 opacity-60">
             {/* Notion logo placeholder */}
