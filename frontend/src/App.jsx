@@ -40,7 +40,7 @@ function App() {
       <Text/>
       <Cal />
       <Pricing />
-      {/* <ZoomInText/> */}
+      <ZoomInText/>
       <Data />
       <Ready />
       <Test />
