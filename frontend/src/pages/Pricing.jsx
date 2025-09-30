@@ -15,7 +15,7 @@ const pricing = () => {
       </div>
 
       {/* Cards */}
-      <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-10 mt-12 sm:mt-16 md:mt-20 px-4 sm:px-6 md:px-9">
+      <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-10 mt-12 sm:mt-16 md:mt-20 px-12 sm:px-6 md:px-9">
         {/* Card 1 - Merlin AI */}
         <div className="rounded-2xl overflow-hidden border border-gray-300 shadow-sm">
           {/* Header */}
@@ -76,7 +76,7 @@ const pricing = () => {
     <section className="my-4 sm:my-6 md:my-8">
     <div className='max-w-xl mx-auto px-4'>
         <div className='flex justify-center items-center'>
-            <button className='bg-[#eeeeee] flex items-center justify-center gap-2 w-full sm:w-auto px-4 sm:px-6 py-3 sm:py-4 rounded-full font-semibold 
+            <button className='bg-[#eeeeee] flex items-center justify-center gap-2  px-2 sm:px-6 py-3 sm:py-4 rounded-full font-semibold 
                 transition-all duration-200 shadow-md text-gray-700 text-sm sm:text-base'
             >
                 Make the switch to Merlin

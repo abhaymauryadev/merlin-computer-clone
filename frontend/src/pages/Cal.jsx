@@ -115,7 +115,7 @@ useEffect(() => {
 
               {/* Merlin response */}
               <div ref={cards} className="flex justify-start mt-4"> {/* Changed from -mt-20 */}
-                <div className="flex items-start max-w-[90%] md:max-w-[510px] space-y-4"> {/* Added consistent spacing */}
+                <div className="flex items-start max-w-[97%] md:max-w-[510px] space-y-4"> {/* Added consistent spacing */}
                   <img src="https://www.merlin.computer/merlin-logo.svg" alt="Merlin logo"
                     className="w-6 md:w-8 h-6 md:h-8 rounded-full mr-3" /> {/* Adjusted margin */}
 
@@ -151,7 +151,7 @@ useEffect(() => {
           </div>
 
           {/* Bottom cards */}
-          <div className="max-w-7xl mx-auto px-4 mt-12"> {/* Standardized margin */}
+          <div className="max-w-7xl mx-auto  mt-12"> {/* Standardized margin */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6"> {/* Consistent gap */}
               {/* Card 1 */}
               <div className="relative rounded-2xl md:rounded-3xl bg-[#edebdc] overflow-hidden h-[400px] md:h-[500px] lg:h-[600px] flex flex-col justify-end p-4 md:p-6 lg:p-8">
@@ -181,10 +181,10 @@ useEffect(() => {
                 <img
                   src="https://www.merlin.computer/_next/static/media/talk.ab54a1e5.webp"
                   alt="Talk Background"
-                  className="absolute inset-0 w-full h-full object-cover"
+                  className="absolute inset-0 w-full h-full object-cover "
                 />
 
-                <div className="absolute top-8 md:top-12 left-4 md:left-20 z-10">
+                <div className="absolute  top-8 md:top-12 left-4 md:left-20 z-10">
                   <button className="h-16 w-[20rem] md:h-24 lg:w-[30rem] px-4 md:px-6 rounded-2xl md:rounded-3xl text-white text-base md:text-lg font-medium
                     bg-gradient-to-b from-gray-500  to-gray-900
                     shadow-[16px_16px_32px_rgba(0,0,0,0.10),-2px_-2px_6px_rgba(255,255,255,0.6)] ">

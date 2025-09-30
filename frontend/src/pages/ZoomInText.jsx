@@ -40,13 +40,11 @@ const ZoomInText = () => {
 
     // Stage 1: zoom into cloud and make it disappear completely
     tl.to(section, {
-      scale:22,
-      opacity:1,
+      scale: 24,
+      opacity: 1,
       transformOrigin: `${originX}% ${originY}%`,
-      duration:0.2,
+      duration: 0.2,
     });
-
-   
 
     return () => {
       tl.kill();
@@ -55,31 +53,39 @@ const ZoomInText = () => {
 
   return (
     <>
-    <section
-      ref={sectionRef}
-      className="relative max-w-[1300px]  m-auto lg:min-h-[520px] mt-20 sm:mt-40 md:mt-90  mb-16 md:mb-20 pt-4 rounded-4xl px-4 overflow-hidden"
-    >
-      {/* First Block */}
-      <div className="flex justify-center items-center mt-16 md:mt-20 max-w-2xl m-auto px-4">
-        <h1 className="font-medium  text-center leading-tight sm:leading-[40px] md:leading-[60px] text-2xl 
-        sm:text-3xl md:text-4xl lg:text-[60px]">
-        <img src="/text.png" alt="" className="-ml-28 " />
-          Merlin was built <br /> for one.
-          <span>
-            &nbsp;
-            <img
-              id="image-to-zoom"
-              src="https://www.merlin.computer/cloud-small.webp"
-              alt="Cloud icon"
-              className="w-12 h-8 sm:w-16 sm:h-10 md:w-20 md:h-12 inline"
+      <section
+        ref={sectionRef}
+        className="relative w-full max-w-[1300px] mx-auto min-h-screen px-4 sm:px-6 lg:px-8 
+          py-12 sm:py-16 md:py-24"
+      >
+        {/* First Block */}
+        <div className="flex justify-center items-center w-full max-w-4xl mx-auto 
+          mt-8 sm:mt-12 md:mt-16 lg:mt-20 px-4">
+          <h1 className="font-medium text-center leading-snug 
+            text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[60px]
+            tracking-tight">
+            <img 
+              src="/text.png" 
+              alt="" 
+              className="w-32 sm:w-40 md:w-48 lg:w-56 -ml-8 sm:-ml-12 lg:-ml-20 
+                transform translate-x-0 sm:translate-x-[-5%]" 
             />
-          </span>{" "}
-          You.
-        </h1>
-      </div>
-
+            Merlin was built <br /> for one.
+            <span className="inline-flex items-center">
+              &nbsp;
+              <img
+                id="image-to-zoom"
+                src="https://www.merlin.computer/cloud-small.webp"
+                alt="Cloud icon"
+                className="w-8 h-6 sm:w-12 sm:h-8 md:w-16 md:h-10 lg:w-20 lg:h-12 
+                  inline-block object-contain transition-transform duration-300"
+              />
+            </span>{" "}
+            You.
+          </h1>
+        </div>
       </section>
-  </>
+    </>
   );
 };
 

@@ -79,8 +79,8 @@ const Hero = () => {
       </div>
 
       {/* Content container */}
-      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-7 py-36">
-        <div className="flex items-center mb-4 text-sm text-gray-500 h-12">
+      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-7  lg:py-36">
+        <div className="flex items-center mb-4 text-sm text-gray-500 h-12  lg:h-12">
           <div
             className="w-2 h-2 rounded-full mr-2"
             style={{ backgroundColor: textData[currentIndex].color }}
@@ -90,7 +90,7 @@ const Hero = () => {
 
         {/* Main heading */}
        <div className="text-center mb-6 md:mb-8 px-4">
-      <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-inter tracking-tight">
+      <h1 className="text-4xl sm:text-xl md:text-5xl lg:text-6xl xl:text-7xl font-inter tracking-tighter">
         {/* "The world's first" drops from top */}
         <div
           ref={introRef}
@@ -132,7 +132,7 @@ const Hero = () => {
 
         {/* Description text */}
         <div className="text-center mb-10 md:mb-12 lg:max-w-2/4 mx-auto">
-          <p className="text-gray-600 text-[6px] sm:text-[12px] md:text-[17px] px-4 leading-relaxed">
+          <p className="text-gray-600 text-[12px] sm:text-[12px] md:text-[17px] px-4 leading-relaxed">
             Merlin finds your highest-impact priorities from your inbox <br className="hidden sm:block" /> and calendar, then helps you complete them with a single click.
           </p>
         </div>
@@ -140,8 +140,8 @@ const Hero = () => {
         {/* CTA Section */}
         <div className="flex flex-col items-center px-4">
           <div className="mb-4 relative">
-            <div className="w-48 sm:w-56 md:w-64 h-10 sm:h-24 -ml-14 mx-auto">
-              <img src="https://www.merlin.computer/try%20merlin.svg" alt="Try Merlin Free for 7 Days" className="w-full h-full object-contain" />
+            <div className="w-64 sm:w-56 md:w-64 h-26 sm:h-24 -ml-14 mx-auto">
+              <img src="https://www.merlin.computer/try%20merlin.svg" alt="Try Merlin Free for 7 Days" className="w-full  object-contain" />
             </div>
           </div>
 
