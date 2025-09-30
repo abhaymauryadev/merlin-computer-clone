@@ -55,7 +55,7 @@ const ZoomInText = () => {
     <>
       <section
         ref={sectionRef}
-        className="relative w-full max-w-[1300px] mx-auto min-h-screen px-4 sm:px-6 lg:px-8 
+        className="relative w-full mt-[20rem] lg:max-w-[1300px] mx-auto lg:min-h-screen px-4 sm:px-6 lg:px-8 
           py-12 sm:py-16 md:py-24"
       >
         {/* First Block */}

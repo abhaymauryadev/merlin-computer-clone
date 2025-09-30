@@ -4,7 +4,7 @@ import React from 'react'
 const ZoomInDesc = () => {
   return (
     <div 
-      className="relative max-w-4xl m-auto min-h-screen min-w-screen bg-cover bg-fixed -mt-[40rem] h-[80rem] bg-center bg-no-repeat mb-90" 
+      className="relative max-w-4xl m-auto min-h-screen min-w-screen bg-cover bg-fixed  lg:-mt-[40rem] h-[80rem] bg-center bg-no-repeat mb-90" 
       style={{
         backgroundImage: 'url(/cloud-small.jpg)'
       }}
