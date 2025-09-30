@@ -12,6 +12,7 @@ import Navbar from './components/Navbar';
 import Text from './pages/Text';
 import Cursor from "./components/Cursor";
 import ZoomInText from "./pages/ZoomInText";
+import ZoomInDesc from "./pages/ZoomInDesc";
 
 function App() {
   useEffect(() => {
@@ -41,6 +42,7 @@ function App() {
       <Cal />
       <Pricing />
       <ZoomInText/>
+      <ZoomInDesc/>
       <Data />
       <Ready />
       <Test />
